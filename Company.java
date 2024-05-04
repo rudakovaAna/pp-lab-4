@@ -20,7 +20,7 @@ public class Company {
         for (Employee employee : employees) {
             if (employee instanceof Manager) {
                 ((Manager) employee).setNumberOfSubordinates(2);
-                employee.setSalary(7500.0);
+                employee.setSalary(7500);
             }
         }
         System.out.println("Zaktualizowane informacje o pracownikach:");
