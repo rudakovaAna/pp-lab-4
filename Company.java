@@ -11,20 +11,21 @@ public class Company {
         employees[2] = new Manager("Jacob White", 7000, 2);
         employees[3] = new Worker("Andru Krown", 5500, "Marketing specialist");
         employees[4] = new Worker("Jan Brown", 6500, "Business coach");
-        int nonManagerCount = 0;
+        employees[5] = new Manager("Asia Rosh", 5000, 3);
+        employees[6] = new Worker("Tailor Dive", 700, "Cleaner");
         for (Employee employee : employees) {
-            if (!(employee instanceof Manager)) {
-                nonManagerCount++;
-            }
+            double newSalary = employee.getSalary() + 500;
+            employee.setSalary(newSalary);
         }
         for (Employee employee : employees) {
             if (employee instanceof Manager) {
-                ((Manager) employee).setNumberOfSubordinates(nonManagerCount);
-                employee.setSalary(7500);
+                ((Manager) employee).setNumberOfSubordinates(2);
+                employee.setSalary(7500.0);
             }
         }
         System.out.println("Zaktualizowane informacje o pracownikach:");
         for (Employee employee : employees) {
-            System.out.println(employee.toString());
+            System.out.println(employee);
         }
     }
+}
