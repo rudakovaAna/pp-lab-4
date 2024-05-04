@@ -17,12 +17,13 @@ public class Company {
                 nonManagerCount++;
             }
         }
-        ((Manager) employees[0]).setNumberOfSubordinates(nonManagerCount);
-        employees[0].setSalary(7500);
-        System.out.println("Dane pracownika o indeksie 3:");
-        System.out.println(employees[3].toString());
-        employees[3].setSalary(60000);
-        System.out.println("\nDane wszystkich pracowników:");
+        for (Employee employee : employees) {
+            if (employee instanceof Manager) {
+                ((Manager) employee).setNumberOfSubordinates(nonManagerCount);
+                employee.setSalary(7500);
+            }
+        }
+        System.out.println("Zaktualizowane informacje o pracownikach:");
         for (Employee employee : employees) {
             System.out.println(employee.toString());
         }
